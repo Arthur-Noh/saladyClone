@@ -26,7 +26,6 @@ type DefaultParams = {
     defaultParam?: string,
 } | undefined;
 
-
 export type AppStackParamList = {
     Main: DefaultParams,
     
@@ -38,3 +37,14 @@ export const AppStackDef = {
     ...MainScreens,
     ...LoginScreens,
 };
+
+const AppStackPages = {
+    // Main
+    Main: 'Main',
+
+    // Login
+    BasicLogin: 'BasicLogin',
+    NaverLogin: 'NaverLogin',
+} as const;
+type ObjectLiteral<T extends { [i : string]: any }> = T[keyof T];
+export type AppStackType = ObjectLiteral<typeof AppStackPages>;

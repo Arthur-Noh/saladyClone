@@ -1,7 +1,7 @@
 import React from 'react';
 import { observer } from 'mobx-react';
-import { SafeAreaView } from 'react-native';import AppStack from './appStack';
-;
+import { SafeAreaView } from 'react-native';
+import AppStack from './appStack';
 
 const AppScreen = observer(() => {
     return (

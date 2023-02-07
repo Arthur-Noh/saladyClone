@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react';
 import styled from 'styled-components/native';
 import { IHeaderButton } from '../../helper/headerHelper';
+import { scaler } from '../../helper/scaler';
 
 const Layout = styled.View`
 flex-direction: row;
@@ -9,13 +10,13 @@ align-items: center;
 `;
 
 const Button = styled.TouchableOpacity<{ isFirst: boolean }>`
-margin-left: ${({ isFirst }) => isFirst ? 0 : 8}px;
+margin-left: ${({ isFirst }) => isFirst ? 0 : scaler(8)}px;
 `;
 
 const ButtonText = styled.Text<{ disabled?: boolean }>`
-font-size: ${({ theme }) => theme.typography.size.s2}px;
+font-size: ${({ theme }) => theme.typography.size.m1}px;
 font-weight: ${({ theme }) => theme.typography.weight.medium};
-color: ${({ theme, disabled }) => disabled ? theme.colors.gray[300] : theme.colors.black.base};
+color: ${({ theme, disabled }) => disabled ? theme.colors.gray[100] : theme.colors.white.base};
 `;
 
 const ButtonImage = styled.Image`

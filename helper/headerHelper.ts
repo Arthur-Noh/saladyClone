@@ -1,6 +1,6 @@
-import { ImageSourcePropType } from "react-native";
+import { ImageSourcePropType } from 'react-native';
 
-export type HeaderButtonType = 'text' | 'image';
+export type HeaderButtonType = 'text' | 'image' | 'default';
 
 /**
  * NOTE:
@@ -14,6 +14,6 @@ export interface IHeaderButton {
     type: HeaderButtonType;
     text?: string;
     image?: ImageSourcePropType;
-    onPress: () => void;
+    onPress?: () => void;
     disabled?: boolean;
 }
